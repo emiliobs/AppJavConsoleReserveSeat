@@ -16,6 +16,8 @@ public class Ticket
     private double price;
     private Date dateOfPurchase;
     private Date  validDate;
+    //one to one
+     private Customer customer;   
 
     public Ticket()
     {
@@ -96,6 +98,15 @@ public class Ticket
     {
         return "Ticket{" + "number=" + number + ", row=" + row + ", seat=" + seat + ", price=" + price + ", dateOfPurchase=" + dateOfPurchase + ", validDate=" + validDate + '}';
     }
+
+
+
+ 
+
+    
+
+   
+   
 
     
     

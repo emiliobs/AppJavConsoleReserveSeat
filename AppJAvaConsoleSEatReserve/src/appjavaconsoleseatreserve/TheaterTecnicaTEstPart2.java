@@ -1,5 +1,6 @@
 package appjavaconsoleseatreserve;
 
+import Logic.Ticket.Customer;
 import Logic.Ticket.Ticket;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -21,7 +22,10 @@ public class TheaterTecnicaTEstPart2
 
         //Structure the datas Created;
         List<Ticket> listTickets = new ArrayList<Ticket>();
-
+      
+        //Customer Test
+        Customer customer = new Customer();
+        
         //I created Ticket
         Ticket ticket = new Ticket(120, 5, 5, 55, new Date(), new Date());
         Ticket ticket2 = new Ticket(121, 5, 6, 55, new Date(), new Date());
@@ -58,7 +62,7 @@ public class TheaterTecnicaTEstPart2
         int row = scanner.nextInt();
         System.out.println("");
         System.out.println("############################## ");
-        
+
         boolean flag = false;
         for (Ticket listTicket : listTickets)
         {
@@ -71,13 +75,35 @@ public class TheaterTecnicaTEstPart2
             }
 
         }
-        
+
         if (flag == false)
         {
             System.out.println("Sorry. No data was found for the row in question.");
         }
         System.out.println("###############################");
         System.out.println("");
+
+        
+
+        customer.setId(1);
+        customer.setName("Emilio");
+        customer.setLastName("Barrera");
+        customer.setDni("55555");
+        customer.getListTickets().add(ticket3);
+
+        Ticket ticket4 = new Ticket();
+        ticket3.setNumber(45);
+        ticket3.setRow(23);
+        ticket3.setSeat(5);
+        ticket3.setPrice(200);
+        ticket3.setDateOfPurchase(new Date());
+        ticket3.setValidDate(new Date());
+
+        customer.getListTickets().add(ticket4);
+        
+   
+        
+        System.out.println("Customer: " + customer.toString() );
 
     }
 }
